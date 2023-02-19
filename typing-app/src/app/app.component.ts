@@ -6,10 +6,41 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'typing-app';
-  show = false;
+  name!: string;
+  date!: string;
+  amount!: number;
+  height!: number;
+  miles!: number;
 
-  showTitle () {
-    this.show = !this.show;
+  car = {
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2000
+  };
+
+  onMilesChange(event: Event) {
+    const value = ((event.target as HTMLInputElement).value)
+    this.miles = parseFloat(value);
+  }
+
+  onHeightChange(event: Event) {
+    const value = (event.target as HTMLInputElement).value
+    this.height = parseFloat(value);
+  }
+
+  onNameChange(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    this.name = value;
+  }
+
+  onDateChange(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    this.date = value;
+  }
+
+  onAmountChange(event: Event) {
+    const value = (event.target as HTMLInputElement).value
+    this.amount = parseFloat(value);
   }
 }
+
