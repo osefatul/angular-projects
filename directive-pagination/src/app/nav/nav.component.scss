@@ -1,0 +1,19 @@
+.nav {
+    padding: 10px 0;
+    border-bottom: 1px solid black ;
+    border-top: 1px solid black ;
+    background: teal;
+    margin: 10px 0;
+    
+
+    a{
+        color: black;
+        font-weight: bolder;
+        font-size: 20px;
+        transition:all 0.8s ease-in-out;
+        &:hover{
+            transform:scale(1.08);
+            color: goldenrod;
+        }
+    }
+}
