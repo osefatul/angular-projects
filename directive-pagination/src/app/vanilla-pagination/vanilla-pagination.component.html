@@ -1,4 +1,9 @@
 <div class="vanilla">
+    <div>
+        <h4>{{ images[currentPage].title }}</h4>
+        <img [src]="images[currentPage].url" />
+    </div>
+    
     <ul class="pagination">
         <li class="page-item" [appClass]="{ disabled: currentPage === 0 }">
             <a class="page-link" (click)="currentPage = currentPage - 1">
@@ -21,9 +26,5 @@
         <a class="page-link" (click)="currentPage = currentPage + 1">Next</a>
         </li>
     </ul>
-    <div>
-        <h4>{{ images[currentPage].title }}</h4>
-        <img [src]="images[currentPage].url" />
-    </div>
 </div>
 

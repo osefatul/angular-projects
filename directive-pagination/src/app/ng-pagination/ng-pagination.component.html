@@ -1,14 +1,4 @@
 <div class="rowflex">
-
-    <div class="d-flex justify-content-center">
-        <pagination 
-        [totalItems]="bigTotalItems" 
-        (pageChanged)="pageChanged($event)"
-        [maxSize]="maxSize">
-        </pagination>
-    </div>
-
-
     <div class="d-flex justify-content-center">
         <p class="content-item" >
         {{images[page].title}}
@@ -19,4 +9,11 @@
         <img [src]="images[page].url" alt="">
     </div>
 
+    <div class="d-flex justify-content-center">
+        <pagination 
+        [totalItems]="bigTotalItems" 
+        (pageChanged)="pageChanged($event)"
+        [maxSize]="maxSize">
+        </pagination>
+    </div>
 </div>
