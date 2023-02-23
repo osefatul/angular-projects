@@ -6,6 +6,8 @@ import { Directive, ElementRef, Input } from '@angular/core';
 export class ClassDirective {
     constructor(private element: ElementRef) {}
 
+    // The input property is named classNames and is aliased to the appClass attribute using the @Input('appClass') syntax.
+    
     @Input('appClass') set classNames(classObj: any) {
     for (let key in classObj) {
         if (classObj[key]) {
