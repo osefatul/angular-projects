@@ -17,8 +17,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
-        ElementsModule,
         CollectionsModule,
+        ElementsModule,
         AppRoutingModule,
     ]
 })
