@@ -3,6 +3,20 @@
 <app-table 
   [data]="data" 
   [headers]="headers"
-  className="striped celled"
-  >
+  className="striped celled">
 </app-table>
+
+
+<app-divider>Tab Menu</app-divider>
+
+<app-tabs>
+  <a 
+  class="item"
+  [routerLinkActiveOptions]="{ exact: true }" 
+  routerLinkActive="active" routerLink="./">
+    Biography
+  </a>
+  <a class="item" routerLinkActive="active" routerLink="companies">Companies</a>
+  <a class="item" routerLinkActive="active" routerLink="partners">Partners</a>
+</app-tabs>
+

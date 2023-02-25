@@ -1,0 +1,4 @@
+:host:not(:first-of-type){
+  display: block;
+  padding-top: 20px;
+}
