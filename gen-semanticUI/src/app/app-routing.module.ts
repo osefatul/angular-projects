@@ -5,12 +5,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
+  {path: '', component:HomeComponentComponent, pathMatch: 'full'},
   {path:"elements", loadChildren:async () => {
     const m = await import("./elements/elements.module");
     return m.ElementsModule;
   }},
   {path: "collections", loadChildren: () => import ("./collections/collections.module").then(m =>m.CollectionsModule)},
-  {path: '', component:HomeComponentComponent},
   {path:"**", component: NotFoundComponent}
 ];
 
