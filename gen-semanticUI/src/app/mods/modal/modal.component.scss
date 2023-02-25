@@ -1,0 +1,17 @@
+
+// if actions class is empty, then:
+.actions:empty {
+  display: none;
+}
+
+
+// by default remove default-button
+.actions-default {
+  display: none;
+}
+
+
+//if actions class is empty, then find the sibling to that named- default-button and add it.
+.actions:empty + .actions-default{
+  display: block;
+}

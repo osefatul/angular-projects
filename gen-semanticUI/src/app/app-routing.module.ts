@@ -26,6 +26,10 @@ const routes: Routes = [
     path: "views",
     loadChildren: () => import ("./views/views.module").then(m => m.ViewsModule)
   },
+  {
+    path: "modal",
+    loadChildren: () => import ("./mods/mods.module").then(m => m.ModsModule)
+  },
 
   {
     path:"**", 
