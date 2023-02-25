@@ -11,15 +11,16 @@ import { Component } from '@angular/core';
 export class CollectionsHomeComponent {
 
   data = [
-    {name: "james", age: 28, job:'Designer'},
-    {name: "Jill", age: 26, job:"Engineer"},
-    {name: "Allison", age:28, job:"Manager"}
+    {name: "james", age: 28, job:'Designer', employed: false},
+    {name: "Jill", age: 26, job:"Engineer", employed: true},
+    {name: "Allison", age:28, job:"Manager", employed: false},
   ]
-  
+
   headers = [
     {key: "name", label:"Name"},
     {key: "age", label:"Age"},
-    {key: "job", label:"Job"}
+    {key: "job", label:"Job"},
+    {key: "employed", label:"Has a job?"},
   ]
 
 }
