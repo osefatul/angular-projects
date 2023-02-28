@@ -1,0 +1,7 @@
+
+<form (submit)="onSubmit($event)">
+  <div class="ui fluid action input wid">
+    <input type="text" placeholder="Enter search term" (input)="term = $any($event).target.value">
+    <div class="ui button" (click)="onSubmit($event)" >Search</div>
+  </div>
+</form>

@@ -1,0 +1,16 @@
+<div class="ui">
+
+  <div class="ui huge header">
+    <img style="width:50px" 
+    src="https://upload.wikimedia.org/wikipedia/commons/6/61/Wikipedia-logo-transparent.png" alt="">
+    <div >Wikipedia Search Engine </div>
+  </div>
+
+    <app-search-bar 
+    (submitted)="onTerm($event)">
+    </app-search-bar>
+
+  <div class="column">
+    <app-page-list *ngIf="pages.length>0" [pages]="pages"></app-page-list>
+  </div>
+</div>

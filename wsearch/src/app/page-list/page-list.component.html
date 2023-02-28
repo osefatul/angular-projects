@@ -1,0 +1,20 @@
+<table class="ui celled stripped table wid">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Word Count</th>
+      <th>Snippet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let page of pages">
+      <td data-label="Name" target="_blank" rel="noopener">
+        <a [href]="'https://en.wikipedia.org/w/index.php?curid=' + page.pageid">
+          {{page.title}}
+        </a>
+      </td>
+      <td data-label="Name">{{page.wordcount}}</td>
+      <td data-label="Name" [innerHTML]="page.snippet"></td>
+    </tr>
+  </tbody>
+</table> 
