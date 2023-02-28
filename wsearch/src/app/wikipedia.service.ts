@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, pluck } from 'rxjs';
 
-
-
 interface WikipediaResponse {
   query:{
     search:{
@@ -19,7 +17,6 @@ interface WikipediaResponse {
   providedIn: 'root'
 })
 export class WikipediaService {
-
   constructor(private http: HttpClient) { }
 
   search (term: string) {

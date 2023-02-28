@@ -11,22 +11,13 @@ import { of } from 'rxjs';
 })
 
 
-export class AppComponent implements OnInit {
+export class AppComponent  {
 
   pages:any[] = [];
 
-  numbers$ = of([1, 2, 3, 4, 5]);
 
-  ngOnInit(): void {
-    this.numbers$.pipe(
-      map(number => number.map(num => num*num )),
-      map(value => "this is a square number" + value)
-    ).subscribe({
-      next(value) { console.log(value)},
-      error(err) { console.log(err)},
-      complete() { console.log("complete it")}
-    })
-  }
+
+
 
 
   constructor(private wikipedia: WikipediaService){}
