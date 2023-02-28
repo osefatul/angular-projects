@@ -13,7 +13,7 @@ import { of } from 'rxjs';
 
 export class AppComponent implements OnInit {
 
-  pages = [];
+  pages:any[] = [];
 
   numbers$ = of([1, 2, 3, 4, 5]);
 
@@ -32,9 +32,9 @@ export class AppComponent implements OnInit {
   constructor(private wikipedia: WikipediaService){}
   
   onTerm(term: string): void {
-    this.wikipedia.search(term).subscribe((response:any) => {
-      console.table(response.query.search)
-      this.pages = response.query.search;
+    this.wikipedia.search(term).subscribe((response) => {
+      // console.log(response)
+      this.pages = response;
     })
   }
 
