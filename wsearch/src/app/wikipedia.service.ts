@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { map, pluck } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +20,9 @@ export class WikipediaService {
         format:'json',
         origin: "*"
       }
-    })
+    }).pipe(
+      pluck("query", "search")
+      // map(res => res?.query?.search)
+    )
   }
 }
