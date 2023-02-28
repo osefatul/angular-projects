@@ -1,9 +1,6 @@
 import { WikipediaService } from './wikipedia.service';
 import { Component, OnInit } from '@angular/core';
 
-import { map } from 'rxjs/operators';
-import { of } from 'rxjs';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,11 +11,6 @@ import { of } from 'rxjs';
 export class AppComponent  {
 
   pages:any[] = [];
-
-
-
-
-
 
   constructor(private wikipedia: WikipediaService){}
   
