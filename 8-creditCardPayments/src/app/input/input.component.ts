@@ -10,13 +10,13 @@ import { FormControl } from '@angular/forms';
 export class InputComponent {
 
 
-  @Input() control: any;
-  @Input() label: any;
+  @Input() control: FormControl | any;
+  @Input() label!: string;
 
   constructor(){}
 
   ngOnInit(): void {}
-  
+
   showErrors() {
     const { dirty, touched, errors } = this.control;
     return dirty && touched && errors;
