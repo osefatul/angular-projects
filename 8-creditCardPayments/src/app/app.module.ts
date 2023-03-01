@@ -6,11 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardFormComponent } from './card-form/card-form.component';
 import { InputComponent } from './input/input.component';
-import { CommonModule } from '@angular/common';
-
-
-import { NgxMaskModule, IConfig } from 'ngx-mask'
-export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = {};
 
 
 @NgModule({
@@ -20,9 +15,7 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = {};
     InputComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
-    NgxMaskModule.forRoot(),
     AppRoutingModule,
     ReactiveFormsModule,
   ],
