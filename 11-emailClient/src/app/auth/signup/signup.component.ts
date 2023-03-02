@@ -1,6 +1,8 @@
 import { FormControl, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
+import { MatchPassword } from '../validators/match-password';
+
 
 @Component({
   selector: 'app-signup',
@@ -14,9 +16,7 @@ import { Component } from '@angular/core';
 
 export class SignupComponent {
 
-  constructor ( ){
-
-  }
+  constructor (private matchPassword: MatchPassword){}
 
   authForm = new FormGroup({
     username: new FormControl("", [
@@ -35,6 +35,8 @@ export class SignupComponent {
       Validators.maxLength(20), 
       Validators.minLength(4)
     ]),
+  }, {
+    validators: [this.matchPassword.validate]
   });
 
   ngOnInit() {
