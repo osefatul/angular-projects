@@ -1,0 +1,20 @@
+<form [formGroup]="mathForm">
+  
+  <!-- If we don't use get method:
+  {{mathForm.value.a}} + {{mathForm.value.b}}  
+  -->
+
+
+  <!-- We are using the get methods -->
+  {{a}} + {{b}} = 
+  <input 
+  formControlName = "answer"
+  />
+</form>
+
+
+<hr>
+
+<div>Form is valid: {{mathForm.valid}}</div>
+<div>Form Values: {{mathForm.value |json }}</div>
+<div>Form Errors: {{mathForm.errors | json}}</div>

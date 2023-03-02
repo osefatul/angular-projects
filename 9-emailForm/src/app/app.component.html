@@ -1,0 +1,26 @@
+<form #DataForm="ngForm" (ngSubmit)="submit()">
+  <input 
+  placeholder="Write you name"
+  type="text"
+  name="name"
+  [(ngModel)]="name"
+  required/>
+
+
+  <input
+  type="email"
+  name="email"
+  placeholder="your email address"
+  [(ngModel)]="email"
+  />
+
+  <div>
+    <button type="submit">
+      Submit
+    </button>
+  </div>
+</form>
+
+
+{{DataForm.value | json}}
+{{DataForm.errors | json}}}}
