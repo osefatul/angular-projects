@@ -1,0 +1,49 @@
+
+<div class="signup" >
+  <h1>Create an Account</h1>
+  
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()"  class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Username</mat-label>
+      <input 
+      formControlName="username"
+      matInput 
+      placeholder="Ex. John">
+    </mat-form-field>
+    {{authForm.get("username")?.errors | json}}
+
+    <mat-form-field class="example-full-width">
+      <mat-label>password</mat-label>
+      <input
+      formControlName="password"
+      matInput
+      type="password"
+      placeholder="Ex. 1235%3">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Confirm Password</mat-label>
+      <input
+      formControlName="confirmPassword"
+      type="password"
+      matInput
+      placeholder="Ex. 1235%3">
+    </mat-form-field>
+
+    <button 
+    class="button"
+    type="submit"
+    mat-raised-button color="primary">Submit</button>
+
+    <p>
+      Already have an account?
+      <a routerLink="">
+        Sign in
+      </a>
+      instead
+    </p>
+  </form>
+  {{authForm.value | json}}
+
+</div>
+

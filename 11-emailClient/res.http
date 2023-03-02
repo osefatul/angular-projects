@@ -1,0 +1,31 @@
+### Signup
+POST https://api.angular-email.com/auth/signup
+Content-Type: application/json
+
+{
+  "username": "angularuser",
+  "password": "Password5%",
+  "passwordConfirmation": "Password5%"
+}
+
+
+### Signin
+POST https://api.angular-email.com/auth/signin
+Content-Type: application/json
+
+{
+  "username": "angularUser",
+  "password": "Password5%"
+}
+
+
+
+
+### Signied in
+GET https://api.angular-email.com/auth/signedin
+Content-Type: application/json
+
+{
+  "username": "angularUser",
+  "password": "Password5%"
+}
