@@ -8,7 +8,7 @@ export class MathValidators {
       const firstNumber = form.value[sourceOne];
       const secondNumber = form.value[sourceTwo];
 
-      console.log(firstNumber, secondNumber, sum)
+      // console.log(firstNumber, secondNumber, sum)
 
       //Check if a+b = answer then return no error otherwise add error.
       if(firstNumber + secondNumber === parseInt(sum)){

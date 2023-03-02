@@ -1,20 +1,18 @@
 <form [formGroup]="mathForm">
-  
   <!-- If we don't use get method:
   {{mathForm.value.a}} + {{mathForm.value.b}}  
   -->
 
 
   <!-- We are using the get methods -->
-  {{a}} + {{b}} = 
-  <input 
-  formControlName = "answer"
-  />
+  <div class="equation"> {{ a }} + {{ b }} =</div>
+  <input appAnswerHighlight formControlName="answer" />
 </form>
-
-
+<div class="stats"> {{ secondsPerSolution | number: '1.1-3'}} Seconds</div>
 <hr>
 
-<div>Form is valid: {{mathForm.valid}}</div>
+
+
+<!-- <div>Form is valid: {{mathForm.valid}}</div>
 <div>Form Values: {{mathForm.value |json }}</div>
-<div>Form Errors: {{mathForm.errors | json}}</div>
+<div>Form Errors: {{mathForm.errors | json}}</div> -->
