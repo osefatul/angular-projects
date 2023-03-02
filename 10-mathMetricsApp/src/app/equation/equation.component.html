@@ -6,7 +6,10 @@
 
   <!-- We are using the get methods -->
   <div class="equation"> {{ a }} + {{ b }} =</div>
-  <input appAnswerHighlight formControlName="answer" />
+
+  <input
+  [ngClass]="{'close': a && b && answer && (a + b)*0.8 < answer}"
+  formControlName="answer" />
 </form>
 <div class="stats"> {{ secondsPerSolution | number: '1.1-3'}} Seconds</div>
 <hr>

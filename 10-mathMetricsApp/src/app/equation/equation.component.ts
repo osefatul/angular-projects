@@ -56,6 +56,10 @@ export class EquationComponent implements OnInit{
     return this.mathForm.value.b;
   }
 
+  get answer (){
+    return this.mathForm?.value?.answer && parseInt(this.mathForm?.value?.answer);
+  }
+
   randomNumber (){
     return Math.floor(Math.random()*10)
   }
