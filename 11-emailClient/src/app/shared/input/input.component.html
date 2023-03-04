@@ -1,11 +1,9 @@
 
-<div>
-  <mat-form-field class="example-full-width">
-    <mat-label>{{label}}</mat-label>
-    <input 
-    formControlName="control"
-    matInput 
-    placeholder="Ex. John">
-  </mat-form-field>
+<mat-form-field class="example-full-width">
+  <mat-label>{{label}}</mat-label>
+  <input 
+  [formControl]="control"
+  matInput
+  type={{type}}>
+</mat-form-field>
 
-</div>

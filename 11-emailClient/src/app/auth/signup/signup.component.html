@@ -6,34 +6,30 @@
 
     <app-input
     label="Username"
-    [control] ="authForm.get('username')"
-
-    ></app-input>
+    type="text"
+    [control]="authForm.get('username')">
+    </app-input>
     {{authForm.get("username")?.errors | json}}
 
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>password</mat-label>
-      <input
-      formControlName="password"
-      matInput
-      type="password"
-      placeholder="Ex. 1235%3">
-    </mat-form-field>
+    <app-input
+    label="Password"
+    type="password">
+    [control]="authForm.get('password')"
+    </app-input>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Confirm Password</mat-label>
-      <input
-      formControlName="passwordConfirmation"
-      type="password"
-      matInput
-      placeholder="Ex. 1235%3">
-    </mat-form-field>
+    <app-input
+    label="Confirm Password"
+    type="password"
+    [control]="authForm.get('passwordConfirmation')">
+    </app-input>
+
 
     <button 
     class="button"
     type="submit"
-    mat-raised-button color="primary">Submit</button>
+    mat-raised-button color="primary">
+      Submit
+    </button>
 
     <p>
       Already have an account?
@@ -43,8 +39,8 @@
       instead
     </p>
   </form>
+  
   {{authForm.value | json}}
-
   {{authForm.errors | json}}
 </div>
 
