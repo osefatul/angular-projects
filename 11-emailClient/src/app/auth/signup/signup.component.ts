@@ -4,6 +4,9 @@ import { FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
 import { MatchPassword } from '../validators/match-password';
 import { AuthService } from '../auth.service';
+import { ɵafterNextNavigation } from '@angular/router';
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-signup',
@@ -17,10 +20,9 @@ export class SignupComponent {
   constructor (
     private matchPassword: MatchPassword,
     private uniquePassword: UniqueUsername,
-    private auth: AuthService
-    ){
-      console.log(this.auth.usernameAvailable("new").subscribe(user => console.log(user)))
-    }
+    private auth: AuthService,
+    private router: Router
+    ){}
 
   authForm = new FormGroup({
     username: new FormControl("", [
@@ -48,6 +50,24 @@ export class SignupComponent {
   }
 
   onSubmit() {
-    console.log(this.authForm.value)
+    // console.log(this.authForm.value)
+    if(this.authForm.invalid){
+      return;
+    }
+
+    this.auth.signup(this.authForm.value).subscribe({
+      next: (res: any)=>{
+        console.log(res)
+        this.router.navigateByUrl("/");
+      },
+
+      error: (err: any)=>{
+        if (err.status) {
+          this.authForm.setErrors({ noConnection: true });
+        } else {
+          this.authForm.setErrors({ unKnownError: true });
+        }
+      }
+    })
   }
 }

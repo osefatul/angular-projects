@@ -1,1 +1,38 @@
+<div class="header">
+  <p>Angular Email</p>
+  
+  <div class="auth">
+    <ng-container *ngIf="signedin$ | async">
+      <a 
+      routerLink="/inbox" 
+      routerLinkActive="active">
+        Inbox
+      </a>
+
+      <a 
+      routerLink="/signout" 
+      routerLinkActive="active">
+        Sign Out
+      </a>
+    </ng-container>
+
+    {{(signedin$ | async)}}
+    <ng-container *ngIf="!(signedin$ | async)">
+      <a 
+      routerLink="/signup" 
+      routerLinkActive="active">
+      Sign up
+      </a>
+    
+      <a 
+      routerLink ="/" 
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}">
+        Sign in
+      </a>
+    </ng-container>
+    
+  </div>
+</div>
+
 <router-outlet></router-outlet>

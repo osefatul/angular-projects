@@ -8,14 +8,14 @@ interface UsernameAvailableResponse {
 }
 
 interface SignupCredentials {
-  username: string;
-  password: string;
-  passwordConfirmation: string;
+  username: string | null;
+  password: string | null;
+  passwordConfirmation: string |null;
 }
 
 interface SigninCredentials {
-  username: string;
-  password: string;
+  username: string | null;
+  password: string | null;
 }
 
 interface SignupResponse {
@@ -38,10 +38,11 @@ interface SigninResponse {
 })
 export class AuthService {
   rootUrl = "https://api.angular-email.com";
-  signedin$ = new BehaviorSubject(null);
+  signedin$ = new BehaviorSubject(false);
   username = "";
 
   constructor(private http: HttpClient) {}
+
 
   usernameAvailable(username: string) {
     return this.http.post<UsernameAvailableResponse>(
@@ -52,46 +53,48 @@ export class AuthService {
     );
   }
 
-  // signup(credentials: SignupCredentials) {
-  //   return this.http
-  //     .post<SignupResponse>(`${this.rootUrl}/auth/signup`, credentials)
-  //     .pipe(
-  //       tap(({ username }) => {
-  //         this.signedin$.next(true);
-  //         this.username = username;
-  //       })
-  //     );
-  // }
+  signup(credentials: Partial<SignupCredentials>) {
+    return this.http
+      .post<SignupResponse>(`${this.rootUrl}/auth/signup`, credentials, {withCredentials: true})
+      .pipe(
+        tap(({ username }) => {
+          this.signedin$.next(true);
+          this.username = username;
+        })
+      );
+  }
 
-  // checkAuth() {
-  //   return this.http
-  //     .get<SignedinResponse>(`${this.rootUrl}/auth/signedin`)
-  //     .pipe(
-  //       tap(({ authenticated, username }) => {
-  //         this.signedin$.next(authenticated);
-  //         this.username = username;
-  //       })
-  //     );
-  // }
+  checkAuth() {
+    return this.http
+      .get<SignedinResponse>(`${this.rootUrl}/auth/signedin`,{withCredentials: true})
+      .pipe(
+        tap(({ authenticated, username }) => {
+          this.signedin$.next(authenticated);
+          this.username = username;
+        })
+      );
+  }
 
-  // signout() {
-  //   return this.http
-  //     .post<SignedinResponse>(`${this.rootUrl}/auth/signout`, {})
-  //     .pipe(
-  //       tap(() => {
-  //         this.signedin$.next(false);
-  //       })
-  //     );
-  // }
+  signout() {
+    return this.http
+      .post<SignedinResponse>(`${this.rootUrl}/auth/signout`, {})
+      .pipe(
+        tap(() => {
+          this.signedin$.next(false);
+        })
+      );
+  }
 
-  // signin(credentials: SigninCredentials) {
-  //   return this.http
-  //     .post<SigninResponse>(`${this.rootUrl}/auth/signin`, { credentials })
-  //     .pipe(
-  //       tap(({ username }) => {
-  //         this.signedin$.next(true);
-  //         this.username = username;
-  //       })
-  //     );
-  // }
+
+  signin(credentials: Partial<SigninCredentials>) {
+    return this.http
+      .post<SigninResponse>(`${this.rootUrl}/auth/signin`, credentials, {withCredentials: true} )
+      .pipe(
+        tap(({ username }) => {
+          this.signedin$.next(true);
+          this.username = username;
+        })
+      );
+  }
+
 }

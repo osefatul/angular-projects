@@ -1,1 +1,45 @@
-<p>signin works!</p>
+<div class="signin" >
+  <h1>Sign in</h1>
+  
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()"  class="example-form">
+
+    <app-input
+    label="Username"
+    [control]="authForm.get('username')">
+    type="text"
+    </app-input>
+    <!-- {{authForm.get("username")?.errors | json}} -->
+
+    <app-input
+    [control]="authForm.get('password')"
+    label="Password"
+    type="password">
+    </app-input>
+
+
+    <!-- Form Level Errors -->
+    <div 
+    *ngIf=" authForm?.errors" 
+    class="ui red basic label">
+      <p *ngIf="authForm?.errors?.['credentials']">
+      Invalid username or password
+      </p>
+    </div>
+
+
+    <button 
+    class="button"
+    type="submit"
+    mat-raised-button color="primary">
+      Submit
+    </button>
+
+    <p>
+      Don't have account?
+      <a routerLink="/signup">
+        Sign up
+      </a>
+      here
+    </p>
+  </form>
+</div>

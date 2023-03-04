@@ -8,7 +8,21 @@ import { Component,Input } from '@angular/core';
 })
 export class InputComponent {
 
+  @Input() type!: string;
+  @Input() controlType = "input";
+  
+
   @Input() control: FormControl | any;
   @Input() label!: string;
-  @Input() type!: string;
+
+  constructor(){}
+
+  ngOnInit(): void {}
+
+  showErrors() {
+    const { dirty, touched, errors } = this.control;
+    return dirty && touched && errors;
+  }
 }
+
+
