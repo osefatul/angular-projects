@@ -18,9 +18,9 @@ import { AuthHttpInterceptor } from './auth/auth-http-interceptor';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true }
-  ],
+  // providers: [
+  //   { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true }
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -58,7 +58,7 @@ export class SignupComponent {
     this.auth.signup(this.authForm.value).subscribe({
       next: (res: any)=>{
         console.log(res)
-        this.router.navigateByUrl("/");
+        this.router.navigateByUrl("/inbox");
       },
 
       error: (err: any)=>{
