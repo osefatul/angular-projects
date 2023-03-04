@@ -4,6 +4,8 @@ import { Observable, of } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { AuthService } from "../auth.service";
 
+
+
 @Injectable({
   providedIn: "root"
 })
@@ -26,7 +28,6 @@ export class UniqueUsername implements AsyncValidator {
         }
       })
     );
-    // tslint:disable-next-line: semicolon
   };
 
   registerOnValidatorChange?(fn: () => void): void {

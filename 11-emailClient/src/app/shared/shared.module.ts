@@ -12,6 +12,7 @@ import { InputComponent } from './input/input.component';
   imports: [
     CommonModule,
     SharedRoutingModule
-  ]
+  ],
+  exports: [InputComponent]
 })
 export class SharedModule { }
