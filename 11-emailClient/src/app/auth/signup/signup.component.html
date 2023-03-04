@@ -24,7 +24,7 @@
     <mat-form-field class="example-full-width">
       <mat-label>Confirm Password</mat-label>
       <input
-      formControlName="confirmPassword"
+      formControlName="passwordConfirmation"
       type="password"
       matInput
       placeholder="Ex. 1235%3">
@@ -44,6 +44,7 @@
     </p>
   </form>
   {{authForm.value | json}}
-
+  
+  {{authForm.errors | json}}
 </div>
 
