@@ -3,15 +3,15 @@
   <h1>Create an Account</h1>
   
   <form [formGroup]="authForm" (ngSubmit)="onSubmit()"  class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Username</mat-label>
-      <input 
-      formControlName="username"
-      matInput 
-      placeholder="Ex. John">
-    </mat-form-field>
+
+    <app-input
+    label="Username"
+    [control] ="authForm.get('username')"
+
+    ></app-input>
     {{authForm.get("username")?.errors | json}}
 
+    
     <mat-form-field class="example-full-width">
       <mat-label>password</mat-label>
       <input
@@ -44,7 +44,7 @@
     </p>
   </form>
   {{authForm.value | json}}
-  
+
   {{authForm.errors | json}}
 </div>
 
