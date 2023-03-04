@@ -14,8 +14,8 @@ POST https://api.angular-email.com/auth/signin
 Content-Type: application/json
 
 {
-  "username": "zamong",
-  "password": "zamong"
+  "username": "angularuser",
+  "password": "Password5%"
 }
 
 
@@ -29,3 +29,15 @@ Content-Type: application/json
   "username": "angularUser",
   "password": "Password5%"
 }
+
+
+
+### fetch emails
+GET https://api.angular-email.com/emails
+Content-Type: application/json
+
+
+
+### fetch emails
+GET https://api.angular-email.com/emails
+Content-Type: application/json
