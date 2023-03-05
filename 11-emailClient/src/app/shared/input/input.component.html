@@ -1,17 +1,26 @@
 
-<mat-form-field class="example-full-width">
+<mat-form-field  class="example-full-width"
+*ngIf="controlType === 'input'">
   <mat-label>{{label}}</mat-label>
   <input
-  *ngIf="controlType === 'input'"
   [formControl]="control"
   matInput
   [type]=type />
 </mat-form-field>
 
-<textarea 
-*ngIf="controlType === 'textarea'" 
-[formControl]="control">
-</textarea>
+
+
+<mat-form-field  
+class="example-full-width"
+*ngIf="controlType === 'textarea'">  
+<mat-label>{{label}}</mat-label>
+  <textarea
+  matInput
+  [formControl]="control">
+  </textarea>
+</mat-form-field>
+
+
 
 <div
 *ngIf="showErrors()" 
